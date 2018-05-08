@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  // openSideNav:boolean = false;
+  // onToggle(){
+  //   this.openSideNav 
+  // }
 }
