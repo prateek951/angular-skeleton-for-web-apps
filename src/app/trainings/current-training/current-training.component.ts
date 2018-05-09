@@ -10,18 +10,21 @@ import { StopTrainingComponent } from './stop-training.component';
 export class CurrentTrainingComponent implements OnInit {
   progress:number = 0;
   timer:number;
-  @Output() stopTheTraining = new EventEmitter<void>();
+  @Output() exitTraining = new EventEmitter<void>();
   constructor(private dialog: MatDialog) {
 
    }
 
   ngOnInit() {
+   this.startOrResumeTimer();
+  }
+  startOrResumeTimer(){
     this.timer = setInterval(() => {
       this.progress += 5;
-      if(this.progress >=100){
+      if (this.progress >= 100) {
         clearInterval(this.timer);
       }
-    },1000);
+    }, 1000);
   }
 
   onStopTraining(){
@@ -33,7 +36,12 @@ export class CurrentTrainingComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      if(result){
+        //If the user wants to exit
+        this.exitTraining.emit();
+      }else{
+        this.startOrResumeTimer();
+      }
     })
   }
 }
