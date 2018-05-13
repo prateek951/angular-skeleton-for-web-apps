@@ -17,7 +17,6 @@ export class NewTrainingComponent implements OnInit,OnDestroy{
 
   constructor(private trainingService: TrainingService,
   private db: AngularFirestore) {
-    db.firestore.settings({ timestampsInSnapshots: true });
   }
 
   ngOnInit() {

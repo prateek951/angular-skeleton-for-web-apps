@@ -17,7 +17,7 @@ export class TrainingService {
   // private finishedExercises: Exercise[] = [];
 
   constructor(private db: AngularFirestore){
-    db.firestore.settings({ timestampsInSnapshots: true });
+    // db.firestore.settings({ timestampsInSnapshots: true });
   }
 
   fetchAvailableExercises() {
