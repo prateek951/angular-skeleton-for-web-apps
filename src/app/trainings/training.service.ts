@@ -4,7 +4,7 @@ import {Subscription} from 'rxjs';
 
 import { Exercise } from './exercise.model';
 import {AngularFirestore} from 'angularfire2/firestore';
-import { ENGINE_METHOD_DIGESTS } from 'constants';
+// import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 @Injectable()
 export class TrainingService {
