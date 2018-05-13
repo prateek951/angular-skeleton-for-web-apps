@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { PreviousTrainingsComponent } from './trainings/previous-trainings/previ
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './navigation/header/header.component';
-import { SidenavlistComponent } from './navigation/sidenavlist/sidenavlist.component';
+import { SidenavListComponent } from "./navigation/sidenavlist/sidenavlist.component";
 import { StopTrainingComponent } from './trainings/current-training/stop-training.component';
 import { AuthService } from './auth/auth.service';
 import { TrainingService } from './trainings/training.service';
@@ -31,7 +31,7 @@ import { TrainingService } from './trainings/training.service';
     RegisterComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavlistComponent,
+    SidenavListComponent,
     StopTrainingComponent
   ],
   imports: [
@@ -40,10 +40,11 @@ import { TrainingService } from './trainings/training.service';
     MaterialModule,
     AppRoutingModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [AuthService,TrainingService],
+  providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
-export class AppModule { }
+export class AppModule {}

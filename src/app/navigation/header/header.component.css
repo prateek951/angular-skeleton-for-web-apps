@@ -5,13 +5,13 @@ a {
 
 a:hover,
 a:active {
-  color: lightblue;
+  color: lightgray;
 }
 
 .navigation-items {
   list-style: none;
-  margin: none;
-  padding: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-caption {

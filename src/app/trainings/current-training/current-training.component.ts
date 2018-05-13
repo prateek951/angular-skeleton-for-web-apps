@@ -32,7 +32,7 @@ export class CurrentTrainingComponent implements OnInit {
     }, step);
   }
 
-  onStopTraining(){
+  onStop(){
     clearInterval(this.timer);
     // this.stopTheTraining.emit();
     const dialogRef = this.dialog.open(StopTrainingComponent,{
