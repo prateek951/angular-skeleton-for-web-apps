@@ -4,12 +4,13 @@ import { TrainingComponent } from "./trainings/training.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
+import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
   { path: "", component: WelcomeComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
-  { path: "trainings", component: TrainingComponent }
+  { path: "trainings", component: TrainingComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -18,6 +19,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule 
-   ]
+   ],
+   providers:[AuthGuard]
 })
 export class AppRoutingModule {}
